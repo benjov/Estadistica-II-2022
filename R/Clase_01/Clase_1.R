@@ -12,7 +12,7 @@ library(ggplot2)
 #****************************************************************************************
 getwd()
 
-setwd("/Users/benjaminolivavazquez/Documents/Personal/Cursos_CIDE/Estadistica_II_2021/Estadistica-II-2021/R")
+setwd("")
 
 getwd()
 

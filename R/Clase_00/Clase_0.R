@@ -1,4 +1,4 @@
-# Estadistica II, Primavera de 2021
+# Estadistica II, Primavera de 2022
 # Primeros Códigos. Introduccion
 
 #****************************************************************************************
