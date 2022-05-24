@@ -15,11 +15,11 @@ fig <- plot_ly(x = P, y = Q, type = 'scatter', mode = 'markers',
                               color = 'rgba(255, 182, 193, .9)', 
                               line = list(color = 'rgba(152, 0, 0, .8)', width = 2)))
 
-fig <- fig %>% layout(title = 'Styled Scatter',
+fig <- fig %>% layout(title = 'Relación Precios y Cantidades',
                       yaxis = list(zeroline = FALSE, title = 'Q'),
                       xaxis = list(zeroline = FALSE, title = 'P') )
 
-fig <- fig %>% layout(title = 'Relación de precios y cantidades')
+#fig <- fig %>% layout(title = 'Relación de precios y cantidades')
 
 fig
 
@@ -72,4 +72,24 @@ fig <- fig %>% layout(title = 'Styled Scatter',
 fig <- fig %>% layout(title = 'Relación de precios y cantidades')
 
 fig
+
+
+
+e = Y - Y_e
+
+e
+
+e = Y - X %*% Beta
+
+e
+
+t(e) %*% e
+
+sigma2 = (t(e) %*% e) / (11 - 2)
+
+sigma2
+
+
+sqrt(sigma2 * solve(t(X) %*% X)[2,2])
+
 
