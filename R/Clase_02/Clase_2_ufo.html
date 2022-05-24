@@ -201,15 +201,15 @@ library(tidyverse)</code></pre>
 ##   longitude = col_double()
 ## )</code></pre>
 <pre class="r"><code>ufo %&gt;% head()</code></pre>
-<pre><code>## # A tibble: 6 x 12
-##      X1 datetime city  state country shape `duration (seco… `duration (hour…
-##   &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;           
-## 1     0 10/10/1… san … tx    us      cyli…             2700 45 minutes      
-## 2     2 10/10/1… kane… hi    us      light              900 15 minutes      
-## 3     3 10/10/1… bris… tn    us      sphe…              300 5 minutes       
-## 4     4 10/10/1… norw… ct    us      disk              1200 20 minutes      
-## 5     5 10/10/1… pell… al    us      disk               180 3  minutes      
-## 6     6 10/10/1… live… fl    us      disk               120 several minutes 
+<pre><code>## # A tibble: 6 × 12
+##      X1 datetime     city  state country shape `duration (sec…` `duration (hou…`
+##   &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;           
+## 1     0 10/10/1949 … san … tx    us      cyli…             2700 45 minutes      
+## 2     2 10/10/1960 … kane… hi    us      light              900 15 minutes      
+## 3     3 10/10/1961 … bris… tn    us      sphe…              300 5 minutes       
+## 4     4 10/10/1965 … norw… ct    us      disk              1200 20 minutes      
+## 5     5 10/10/1966 … pell… al    us      disk               180 3  minutes      
+## 6     6 10/10/1966 … live… fl    us      disk               120 several minutes 
 ## # … with 4 more variables: comments &lt;chr&gt;, `date posted` &lt;chr&gt;, latitude &lt;dbl&gt;,
 ## #   longitude &lt;dbl&gt;</code></pre>
 <p>El operador pipeline %&gt;% es útil para concatenar múltiples dplyr operaciones.</p>
@@ -238,7 +238,7 @@ paste(&quot;Se localizaron &quot;, ufo.count, &quot;avistamientos de ovnis&quot;
   group_by(state) %&gt;% 
   summarise(avg.duration = mean(`duration (seconds)`)) %&gt;% 
   arrange(desc(avg.duration)) </code></pre>
-<pre><code>## # A tibble: 67 x 2
+<pre><code>## # A tibble: 67 × 2
 ##    state avg.duration
 ##    &lt;chr&gt;        &lt;dbl&gt;
 ##  1 ar         115893.
@@ -259,7 +259,7 @@ paste(&quot;Se localizaron &quot;, ufo.count, &quot;avistamientos de ovnis&quot;
   group_by(state) %&gt;% 
   summarise(number.sightings = n()) %&gt;% 
   arrange(desc(number.sightings))</code></pre>
-<pre><code>## # A tibble: 67 x 2
+<pre><code>## # A tibble: 67 × 2
 ##    state number.sightings
 ##    &lt;chr&gt;            &lt;int&gt;
 ##  1 ca                8683
@@ -280,7 +280,7 @@ paste(&quot;Se localizaron &quot;, ufo.count, &quot;avistamientos de ovnis&quot;
   group_by(shape) %&gt;% 
   summarise(shape.count = n()) %&gt;% 
   arrange(desc(shape.count))</code></pre>
-<pre><code>## # A tibble: 28 x 2
+<pre><code>## # A tibble: 28 × 2
 ##    shape     shape.count
 ##    &lt;chr&gt;           &lt;int&gt;
 ##  1 light           14130

@@ -1,8 +1,8 @@
 ---
 title: "Clase de UfO's"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 Este es un documento de R Markdown. Markdown es una sintaxis de formato simple para la creación de documentos HTML, PDF y MS Word. Para obtener más detalles sobre el uso de R Markdown, consulta: https://rmarkdown.rstudio.com/

@@ -190,3 +190,8 @@ school_summary.tb %>% head(15)
 
 ```
 
+$X^2 = a + b$
+
+$\Pi  = \Gamma$
+
+

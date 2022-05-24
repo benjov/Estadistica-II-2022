@@ -199,17 +199,17 @@ pre code {
 <div id="preview-tibble" class="section level3">
 <h3>Preview tibble</h3>
 <pre class="r"><code>students %&gt;% head()</code></pre>
-<pre><code>## # A tibble: 6 x 7
-##   `Student ID` student_name   gender grade school_name  reading_score math_score
-##          &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;                &lt;dbl&gt;      &lt;dbl&gt;
-## 1            0 Paul Bradley   M      9th   Huang High …            66         79
-## 2            1 Victor Smith   M      12th  Huang High …            94         61
-## 3            2 Kevin Rodrigu… M      12th  Huang High …            90         60
-## 4            3 Dr. Richard S… M      12th  Huang High …            67         58
-## 5            4 Bonnie Ray     F      9th   Huang High …            97         84
-## 6            5 Bryan Miranda  M      9th   Huang High …            94         94</code></pre>
+<pre><code>## # A tibble: 6 × 7
+##   `Student ID` student_name    gender grade school_name reading_score math_score
+##          &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt;
+## 1            0 Paul Bradley    M      9th   Huang High…            66         79
+## 2            1 Victor Smith    M      12th  Huang High…            94         61
+## 3            2 Kevin Rodriguez M      12th  Huang High…            90         60
+## 4            3 Dr. Richard Sc… M      12th  Huang High…            67         58
+## 5            4 Bonnie Ray      F      9th   Huang High…            97         84
+## 6            5 Bryan Miranda   M      9th   Huang High…            94         94</code></pre>
 <pre class="r"><code>schools %&gt;% head()</code></pre>
-<pre><code>## # A tibble: 6 x 5
+<pre><code>## # A tibble: 6 × 5
 ##   `School ID` school_name           type      size  budget
 ##         &lt;dbl&gt; &lt;chr&gt;                 &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;
 ## 1           0 Huang High School     District  2917 1910635
@@ -223,15 +223,15 @@ pre code {
 <pre class="r"><code>data2 = left_join(students, schools, by = c(&quot;school_name&quot;))
 
 data2 %&gt;% head()</code></pre>
-<pre><code>## # A tibble: 6 x 11
-##   `Student ID` student_name gender grade school_name reading_score math_score
-##          &lt;dbl&gt; &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt;
-## 1            0 Paul Bradley M      9th   Huang High…            66         79
-## 2            1 Victor Smith M      12th  Huang High…            94         61
-## 3            2 Kevin Rodri… M      12th  Huang High…            90         60
-## 4            3 Dr. Richard… M      12th  Huang High…            67         58
-## 5            4 Bonnie Ray   F      9th   Huang High…            97         84
-## 6            5 Bryan Miran… M      9th   Huang High…            94         94
+<pre><code>## # A tibble: 6 × 11
+##   `Student ID` student_name    gender grade school_name reading_score math_score
+##          &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt;
+## 1            0 Paul Bradley    M      9th   Huang High…            66         79
+## 2            1 Victor Smith    M      12th  Huang High…            94         61
+## 3            2 Kevin Rodriguez M      12th  Huang High…            90         60
+## 4            3 Dr. Richard Sc… M      12th  Huang High…            67         58
+## 5            4 Bonnie Ray      F      9th   Huang High…            97         84
+## 6            5 Bryan Miranda   M      9th   Huang High…            94         94
 ## # … with 4 more variables: `School ID` &lt;dbl&gt;, type &lt;chr&gt;, size &lt;dbl&gt;,
 ## #   budget &lt;dbl&gt;</code></pre>
 </div>
@@ -290,9 +290,9 @@ overall_passing_rate</code></pre>
 <pre class="r"><code>students %&gt;% 
   group_by(school_name) %&gt;% 
   summarize(avg.reading=mean(reading_score), avg.math=mean(math_score))</code></pre>
-<pre><code>## # A tibble: 15 x 3
+<pre><code>## # A tibble: 15 × 3
 ##    school_name           avg.reading avg.math
-##  * &lt;chr&gt;                       &lt;dbl&gt;    &lt;dbl&gt;
+##    &lt;chr&gt;                       &lt;dbl&gt;    &lt;dbl&gt;
 ##  1 Bailey High School           81.0     77.0
 ##  2 Cabrera High School          84.0     83.1
 ##  3 Figueroa High School         81.2     76.7
@@ -314,8 +314,9 @@ overall_passing_rate</code></pre>
 <pre class="r"><code>students %&gt;% 
   group_by(school_name, grade) %&gt;% 
   summarize(avg.reading=mean(reading_score), avg.math=mean(math_score))</code></pre>
-<pre><code>## `summarise()` has grouped output by 'school_name'. You can override using the `.groups` argument.</code></pre>
-<pre><code>## # A tibble: 60 x 4
+<pre><code>## `summarise()` has grouped output by 'school_name'. You can override using the
+## `.groups` argument.</code></pre>
+<pre><code>## # A tibble: 60 × 4
 ## # Groups:   school_name [15]
 ##    school_name          grade avg.reading avg.math
 ##    &lt;chr&gt;                &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;
@@ -370,7 +371,7 @@ mean_reading_score &lt;- mean_reading_score %&gt;% sapply(as.numeric)</code></pr
 <div id="display-summary-of-district-wide-data" class="section level3">
 <h3>Display summary of district-wide data</h3>
 <pre class="r"><code>district_summary</code></pre>
-<pre><code>## # A tibble: 1 x 8
+<pre><code>## # A tibble: 1 × 8
 ##   Total.Schools Total.Students Total.Budget Avg.Math Avg.Reading
 ##           &lt;int&gt;          &lt;int&gt;        &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;
 ## 1            15          39170     24649428     79.0        81.9
@@ -387,28 +388,31 @@ mean_reading_score &lt;- mean_reading_score %&gt;% sapply(as.numeric)</code></pr
             Budget = mean(budget),
             Per.Student.Budget = mean(budget) / n()
             )</code></pre>
-<pre><code>## `summarise()` has grouped output by 'type'. You can override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by 'type'. You can override using the `.groups`
+## argument.</code></pre>
 <pre class="r"><code>school_summary.tb %&gt;% head(15)</code></pre>
-<pre><code>## # A tibble: 15 x 7
+<pre><code>## # A tibble: 15 × 7
 ## # Groups:   type [2]
-##    type  school_name Avg.Reading.Sco… Avg.Math.Score Total.Students Budget
-##    &lt;chr&gt; &lt;chr&gt;                  &lt;dbl&gt;          &lt;dbl&gt;          &lt;int&gt;  &lt;dbl&gt;
-##  1 Char… Cabrera Hi…             84.0           83.1           1858 1.08e6
-##  2 Char… Griffin Hi…             83.8           83.4           1468 9.18e5
-##  3 Char… Holden Hig…             83.8           83.8            427 2.48e5
-##  4 Char… Pena High …             84.0           83.8            962 5.86e5
-##  5 Char… Shelton Hi…             83.7           83.4           1761 1.06e6
-##  6 Char… Thomas Hig…             83.8           83.4           1635 1.04e6
-##  7 Char… Wilson Hig…             84.0           83.3           2283 1.32e6
-##  8 Char… Wright Hig…             84.0           83.7           1800 1.05e6
-##  9 Dist… Bailey Hig…             81.0           77.0           4976 3.12e6
-## 10 Dist… Figueroa H…             81.2           76.7           2949 1.88e6
-## 11 Dist… Ford High …             80.7           77.1           2739 1.76e6
-## 12 Dist… Hernandez …             80.9           77.3           4635 3.02e6
-## 13 Dist… Huang High…             81.2           76.6           2917 1.91e6
-## 14 Dist… Johnson Hi…             81.0           77.1           4761 3.09e6
-## 15 Dist… Rodriguez …             80.7           76.8           3999 2.55e6
+##    type     school_name    Avg.Reading.Sco… Avg.Math.Score Total.Students Budget
+##    &lt;chr&gt;    &lt;chr&gt;                     &lt;dbl&gt;          &lt;dbl&gt;          &lt;int&gt;  &lt;dbl&gt;
+##  1 Charter  Cabrera High …             84.0           83.1           1858 1.08e6
+##  2 Charter  Griffin High …             83.8           83.4           1468 9.18e5
+##  3 Charter  Holden High S…             83.8           83.8            427 2.48e5
+##  4 Charter  Pena High Sch…             84.0           83.8            962 5.86e5
+##  5 Charter  Shelton High …             83.7           83.4           1761 1.06e6
+##  6 Charter  Thomas High S…             83.8           83.4           1635 1.04e6
+##  7 Charter  Wilson High S…             84.0           83.3           2283 1.32e6
+##  8 Charter  Wright High S…             84.0           83.7           1800 1.05e6
+##  9 District Bailey High S…             81.0           77.0           4976 3.12e6
+## 10 District Figueroa High…             81.2           76.7           2949 1.88e6
+## 11 District Ford High Sch…             80.7           77.1           2739 1.76e6
+## 12 District Hernandez Hig…             80.9           77.3           4635 3.02e6
+## 13 District Huang High Sc…             81.2           76.6           2917 1.91e6
+## 14 District Johnson High …             81.0           77.1           4761 3.09e6
+## 15 District Rodriguez Hig…             80.7           76.8           3999 2.55e6
 ## # … with 1 more variable: Per.Student.Budget &lt;dbl&gt;</code></pre>
+<p><span class="math inline">\(X^2 = a + b\)</span></p>
+<p><span class="math inline">\(\Pi = \Gamma\)</span></p>
 </div>
 
 
